@@ -1,0 +1,36 @@
+STEP 1: FROM debian:latest
+STEP 2: RUN apt-get update && apt-get -y install sudo
+--> Using cache 86aa1a695a6577ca9af1b155d06160fb81c3bd59e1a087340a0f4653fcfc295a
+--> 86aa1a695a6
+STEP 3: RUN adduser admin
+--> Using cache d0d857b2b647061cfdd6af00652b25328d7dff51f08f0a54405c668a72c2cbf9
+--> d0d857b2b64
+STEP 4: RUN adduser admin sudo
+--> Using cache 4e9955fc7c9670e854898726676d9c6a9aece13b19d356e3155eb577a62a503f
+--> 4e9955fc7c9
+STEP 5: RUN echo admin:admin|chpasswd
+--> Using cache 65f33285760637cc7fd622eac81fa9487e140dcdeeb04bb0c2dcfd03a5a5ea47
+--> 65f33285760
+STEP 6: RUN echo 'admin ALL=(ALL) NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
+--> Using cache fae667f2bf97eb476960c8499d4f7085c42bab1329fe5fbf1bfbf47a66ec0e4b
+--> fae667f2bf9
+STEP 7: USER admin
+--> Using cache 7793ec50476ec72def98b531164eec7cc08e32f9c1a51512d21ba2bd99bac260
+--> 7793ec50476
+STEP 8: RUN sudo apt-get install python3 -y
+--> Using cache ff7f4eba9e67ee259f2afcbda132f93e98b4695227a135329be575e33c766c4d
+--> ff7f4eba9e6
+STEP 9: RUN sudo apt-get install python3-pip -y
+--> Using cache d521dd0b128ee8e4cdc70d0ea1d477f17de2d56f1c1165877d26b9d84acca18a
+--> d521dd0b128
+STEP 10: RUN sudo pip install django
+--> Using cache df77071b43f5f06aac7b5618f02280f79de6d943b39497ad3a0158863e08f01e
+--> df77071b43f
+STEP 11: RUN sudo pip install django-bootstrap-v5
+--> Using cache c6dcde80335385b576b03565285c1c8a81c6011176e838e1938dab3c3fc8239f
+--> c6dcde80335
+STEP 12: ENTRYPOINT ["/bin/bash"]
+--> Using cache 8b43a8c107162de113e3c185e935304cdbd674be63b3e0a47d0d7c3abb70f026
+STEP 13: COMMIT mydjango
+--> 8b43a8c1071
+8b43a8c107162de113e3c185e935304cdbd674be63b3e0a47d0d7c3abb70f026
