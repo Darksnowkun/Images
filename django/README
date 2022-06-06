@@ -1,0 +1,5 @@
+Possible expansion:
+
+Note commit image for LLTK references psycopg2. May wish to install that, plus install required libpq-dev dependency in the future, and add to image so that it is not needed to manually install on new image.
+
+Also maybe future add java (over 8, probably preferably at least 11 or 15) and automatically download bfg tool for any git mistakes... so that developer does not need to install bfg and java manually. 
